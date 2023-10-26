@@ -1,42 +1,67 @@
-# demo_vue
+# Tienda de Yovan Enovore
 
-This template should help get you started developing with Vue 3 in Vite.
+Este es el repositorio para la Tienda de Yovan Enovore, un proyecto de comercio electrónico que consta de un frontend desarrollado en Vue con Vite y un backend desarrollado en NestJS.
 
-## Recommended IDE Setup
+## Descripción del Proyecto
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Este proyecto es una tienda en línea que permite a los usuarios explorar y comprar una variedad de productos. El frontend proporciona una interfaz de usuario intuitiva y atractiva para los clientes, mientras que el backend maneja la lógica de negocio, la autenticación y la gestión de productos.
 
-## Type Support for `.vue` Imports in TS
+## Tecnologías Utilizadas
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- Frontend: Vue.js, Vite, CSS, HTML
+- Backend: NestJS, Node.js
+- Base de Datos: (Agrega aquí la base de datos que estás utilizando)
+- Otros: (Agrega aquí cualquier otra tecnología o biblioteca relevante)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Inicio Rápido
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+1. **Clonar el repositorio:**
 
-## Customize configuration
+<pre><code> git clone https://github.com/tuusuario/tu-tienda.git
+   cd tu-tienda</code></pre>
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+  
+1 Instalar dependencias:
 
-```sh
+Para el frontend:
+bash
+Copy code
+cd frontend
 npm install
-```
+Para el backend:
+bash
+Copy code
+cd backend
+npm install
+Configurar la base de datos:
 
-### Compile and Hot-Reload for Development
+(Agrega aquí instrucciones sobre cómo configurar la base de datos si es necesario)
 
-```sh
+Iniciar la aplicación:
+
+Para el frontend:
+bash
+Copy code
+cd frontend
 npm run dev
-```
+Para el backend:
+bash
+Copy code
+cd backend
+npm run start
+Accede a la aplicación:
 
-### Type-Check, Compile and Minify for Production
+La aplicación estará disponible en http://localhost:3000 para el frontend y http://localhost:4000 para el backend.
 
-```sh
-npm run build
-```
-# b-usfx-store
-# b-usfx-store
+Contribución
+Agradecemos las contribuciones a este proyecto. Si deseas contribuir, sigue estos pasos:
+
+Haz un fork del repositorio.
+Crea una rama para tu contribución: git checkout -b feature/nueva-funcionalidad.
+Realiza tus cambios y confirma: git commit -m "Agrega nueva funcionalidad".
+Envía tus cambios a tu fork: git push origin feature/nueva-funcionalidad.
+Crea una solicitud de extracción (Pull Request) en este repositorio.
+Contacto
+Nombre: Yovan Enovore
+Correo Electrónico: yovanuxf@gmail.com
