@@ -68,45 +68,6 @@ Este proyecto es una tienda en línea que permite a los usuarios explorar y comp
 - Base de Datos: (Agrega aquí la base de datos que estás utilizando)
 - Otros: (Agrega aquí cualquier otra tecnología o biblioteca relevante)
 
-## Inicio Rápido
-
-1. **Clonar el repositorio:**
-
-   ```bash
-   git clone https://github.com/tuusuario/tu-tienda.git
-   cd tu-tienda
-Instalar dependencias:
-
-Para el frontend:
-bash
-Copy code
-cd frontend
-npm install
-Para el backend:
-bash
-Copy code
-cd backend
-npm install
-Configurar la base de datos:
-
-(Agrega aquí instrucciones sobre cómo configurar la base de datos si es necesario)
-
-Iniciar la aplicación:
-
-Para el frontend:
-bash
-Copy code
-cd frontend
-npm run dev
-Para el backend:
-bash
-Copy code
-cd backend
-npm run start
-Accede a la aplicación:
-
-La aplicación estará disponible en http://localhost:3000 para el frontend y http://localhost:4000 para el backend.
-
 
 ## Contribución
 
