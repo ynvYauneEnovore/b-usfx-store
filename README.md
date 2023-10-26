@@ -49,26 +49,6 @@ npm install
 </code></pre>
 
 
-Mis disculpas por la confusión. Aquí tienes el código completo para tu README.md:
-
-markdown
-Copy code
-# Tienda de Yovan Enovore
-
-Este es el repositorio para la Tienda de Yovan Enovore, un proyecto de comercio electrónico que consta de un frontend desarrollado en Vue con Vite y un backend desarrollado en NestJS.
-
-## Descripción del Proyecto
-
-Este proyecto es una tienda en línea que permite a los usuarios explorar y comprar una variedad de productos. El frontend proporciona una interfaz de usuario intuitiva y atractiva para los clientes, mientras que el backend maneja la lógica de negocio, la autenticación y la gestión de productos.
-
-## Tecnologías Utilizadas
-
-- Frontend: Vue.js, Vite, CSS, HTML
-- Backend: NestJS, Node.js
-- Base de Datos: (Agrega aquí la base de datos que estás utilizando)
-- Otros: (Agrega aquí cualquier otra tecnología o biblioteca relevante)
-
-
 ## Contribución
 
 Agradecemos las contribuciones a este proyecto. Si deseas contribuir, sigue estos pasos:
