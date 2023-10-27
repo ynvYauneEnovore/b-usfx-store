@@ -7,9 +7,8 @@ const authStore = useAuthStore();
 
 
 <template>
-  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(0, 48, 52);">
-
-    <div class="container">
+  <nav class="navbar navbar-expand-lg fixed-top">
+<div class="nabvars">
       <RouterLink to="/" class="navbar-brand">
         <lord-icon
           src="../src/assets/json/config.json"
@@ -32,7 +31,14 @@ const authStore = useAuthStore();
         <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
 
           <li class="nav-item">
-            <RouterLink to="/venta">Ventas</RouterLink>
+            <RouterLink to="/ayuda">
+              <lord-icon
+    src="https://cdn.lordicon.com/ojnjgkun.json"
+    trigger="hover"
+    colors="primary:#ffffff"
+    style="width:50px;height:50px">
+</lord-icon>
+            </RouterLink>
             &nbsp;&nbsp;
           </li>
           <li class="nav-item">
@@ -48,7 +54,7 @@ const authStore = useAuthStore();
         </ul>
         <RouterLink v-if="!authStore.token" to="/login" class="">
           <lord-icon
-            src="https://cdn.lordicon.com/hrjifpbq.json"
+            src="../src/assets/json/login.json"
             trigger="hover"
             colors="primary:#fff"
             style="width:40px;height:40px">
@@ -68,4 +74,21 @@ const authStore = useAuthStore();
   height: auto;
   /* Ajusta la altura proporcionalmente */
 }
+.nabvars {
+  background-color: rgba(0, 145, 255, 0.722);
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  border-radius: 10px; 
+  padding-left: 5%; 
+  padding-right: 5%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 2px solid #007890; 
+
+}
+
+
+
 </style>

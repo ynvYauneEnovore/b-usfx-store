@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/BienvenidoView.vue'
 import LoginView from "@/views/LoginView.vue";
-import Wlcome from '@/views/hola.vue';
+import LandingView from '@/views/LandingView.vue';
+import AyudaView from '@/views/AyudaView.vue';
 import { useAuthStore } from '@/stores';
 import { getTokenFromLocalStorage } from '@/helpers';
 
@@ -11,7 +12,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'landing',
-      component: Wlcome
+      component: LandingView
+      
+    },
+
+    {
+      path: '/ayuda',
+      name: 'ayduda',
+      component: AyudaView
       
     },
 
@@ -21,6 +29,7 @@ const router = createRouter({
       component: HomeView
       
     },
+
     { path: "/login", name: "login", component: LoginView  },
     {
       path: '/catproducto',
@@ -58,7 +67,7 @@ const router = createRouter({
 })
 
 router.beforeEach(async to => {
-  const publicPages = ["/login", "/landing", "/"];
+  const publicPages = ["/login", "/landing", "/", "/ayuda"];
   const authRequired = !publicPages.includes(to.path);
   const authStore = useAuthStore();
 

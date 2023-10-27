@@ -1,46 +1,118 @@
-<script setup lang="ts">
-import { ref } from "vue";
-import { useAuthStore } from "@/stores/index";
-
-const usuario = ref("");
-const clave = ref("");
-const error = ref(false);
-
-function onSubmit() {
-  const authStore = useAuthStore();
-  authStore.login(usuario.value, clave.value).catch(() => (error.value = true));
-}
-</script>
-
 <template>
-                <!-- BEGIN: Login Form -->
-                    <form class="form" @submit.prevent="onSubmit">
-                    <div class="my-auto mx-auto xl:ml-20 bg-white dark:bg-darkmode-600 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
-                        <h2 class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left">
-                            Acceder
-                        </h2>
-                        <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">A solo unos clics más para acceder a tu cuenta. Gestiona todas tus cuentas de la librería en un solo lugar.</div>
-                        <div class="intro-x mt-8">
-                            <input type="text" class="intro-x login__input form-control py-3 px-4 block" placeholder="Nombre de Usuario" v-model="usuario" autofocus>
-                            <input type="password" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Contraceña" v-model="clave">
-                        </div>
-                        <div class="intro-x flex text-slate-600 dark:text-slate-500 text-xs sm:text-sm mt-4">
-                            <a class="text-dark" href="">Olvidaste tu contraceña?</a> 
-                            <p v-if="error" class="text-danger">Usuario y/o contraseña incorrectos</p>
-                        </div>
-                        <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
-                            <button class="btn btn-success py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Ingresar</button>
+    <div class="login-container">
+      <form @submit.prevent="onSubmit" class="login-form">
+        <div class="text-center">
+        <RouterLink to="/">
+            <lord-icon
+            src="../src/assets/json/home.json"
+            trigger="hover"
+            colors="primary:#007BFF"
+            style="width:100px;height:100px">
+            </lord-icon>
+        </RouterLink>
+        </div>
 
-                            <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Registrarse</button>
-                        </div>
-
-                        <div class="">Al registrarte, aceptas nuestros <a class="text-primary dark:text-slate-200" href="">Términos y condiciones</a> y nuestra <a class="text-primary dark:text-slate-200" href="">Política de privacidad</a></div>                    </div>
-                </form>
-                <!-- END: Login Form -->
-</template>
-
-
-
-<style>
-
-</style>
+        <h2 class="login-title">Acceder</h2>
+  
+        <div class="form-group">
+          <label for="usuario">Usuario:</label>
+          <input type="text" id="usuario" v-model="usuario" required class="form-control">
+        </div>
+  
+        <div class="form-group">
+          <label for="clave">Contraseña:</label>
+          <input type="password" id="clave" v-model="clave" required class="form-control">
+        </div>
+  
+        <button type="submit" class="login-button">Ingresar</button>
+  
+        <p v-if="error" class="error-message">Usuario y/o contraseña incorrectos</p>
+      </form>
+    </div>
+  </template>
+  
+  <script>
+  import { ref } from "vue";
+  import { useAuthStore } from "@/stores/index";
+  
+  export default {
+    setup() {
+      const usuario = ref("admin@admin.com");
+      const clave = ref("12345678");
+      const error = ref(false);
+  
+      const onSubmit = () => {
+        const authStore = useAuthStore();
+        authStore.login(usuario.value, clave.value).catch(() => (error.value = true));
+      };
+  
+      return {
+        usuario,
+        clave,
+        error,
+        onSubmit
+      };
+    }
+  }
+  </script>
+  
+  <style scoped>
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+  }
+  
+  .login-form {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.2s ease;
+  }
+  
+  .login-form:hover {
+    transform: scale(1.05);
+  }
+  
+  .login-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin: 10px 0;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-button {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+  }
+  
+  .login-button:hover {
+    background: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+  }
+  </style>
+  
