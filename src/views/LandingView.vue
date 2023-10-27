@@ -1,6 +1,24 @@
 <script setup lang="ts">
 import Header from "@/components/Header.vue";
 import DefaultFooter from "@/components/Footer.vue";
+import axios from "axios"; 
+import { onMounted, ref } from 'vue'
+import type { CatProducto } from '@/models/catproducto'
+
+const apiUrl = "http://localhost:3000/api/v1/catproducto"; // Reemplaza con la URL correcta de tu endpoint
+
+const catProductos = ref<CatProducto[]>([]); 
+
+onMounted(async () => {
+  try {
+    const response = await axios.get(apiUrl);
+    catProductos.value = response.data; 
+    console.log(catProductos);
+  } catch (error) {
+    console.error("Error al cargar los datos:", error);
+  }
+});
+
 </script>
 
 <template>
@@ -10,31 +28,7 @@ import DefaultFooter from "@/components/Footer.vue";
 
   <div class="gallery">
         <div class="image">
-            <img src="@/assets/images/food-beverage-1.jpg" alt="Imagen 1">
-        </div>
-        <div class="image">
-            <img src="@/assets/images/food-beverage-1.jpg" alt="Imagen 2">
-        </div>
-        <div class="image">
-            <img src="@/assets/images/food-beverage-1.jpg" alt="Imagen 3">
-        </div>
-        <div class="image">
-            <img src="@/assets/images/food-beverage-1.jpg" alt="Imagen 4">
-        </div>
-        <div class="image">
-            <img src="@/assets/images/food-beverage-1.jpg" alt="Imagen 5">
-        </div>
-        <div class="image">
-            <img src="@/assets/images/food-beverage-1.jpg" alt="Imagen 6">
-        </div>
-        <div class="image">
-            <img src="@/assets/images/food-beverage-1.jpg" alt="Imagen 7">
-        </div>
-        <div class="image">
-            <img src="@/assets/images/food-beverage-1.jpg" alt="Imagen 8">
-        </div>
-        <div class="image">
-            <img src="@/assets/images/food-beverage-1.jpg" alt="Imagen 9">
+          <p v-for="producto in catProductos" :key="producto.id">{{ producto.nombre }}</p>
         </div>
     </div>
 
@@ -61,6 +55,8 @@ import DefaultFooter from "@/components/Footer.vue";
         </form>
 </div>
   <DefaultFooter />
+
+
 </template>
 
 <style>

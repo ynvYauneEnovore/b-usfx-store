@@ -15,7 +15,7 @@ const nombre = ref('')
 async function crearCatProducto() {
   await http
     .post(ENDPOINT, { nombre: nombre.value })
-    .then(() => router.push('/catproductos'))
+    .then(() => router.push('/catproducto'))
 }
 
 function goBack() {
