@@ -67,6 +67,8 @@ Esperamos tus contribuciones para mejorar este proyecto.
 - Nombre: Yovan Enovore
 - Correo Electrónico: [yovanuxf@gmail.com](mailto:yovanuxf@gmail.com)
 
+## Galeria
+![Logo-docker](https://raw.githubusercontent.com/ynvYauneEnovore/b-usfx-store/main/src/assets/gif/1.gif)
 
 ## Licencia
 
